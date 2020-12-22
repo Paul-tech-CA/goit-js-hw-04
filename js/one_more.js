@@ -86,7 +86,83 @@
 // console.log(longestChain(stringNumbers));
 // ===================================================================
 
-  createTransaction(amount, type){
-    const transactionNew = { name: id, operation: type, summary: amount };
-    console.log(transitionNew);
-  };
+// createTransaction(amount, type){
+//   const transactionNew = { name: id, operation: type, summary: amount };
+//   console.log(transitionNew);
+// };
+// let wordBlanks;
+// var myNoun = 'dog';
+// var myAdjective = 'big';
+// var myVerb = 'ran';
+// var myAdverb = 'quickly';
+// console.log((wordBlanks = `${myNoun} ${myAdjective}`));
+
+// const generateRandomArray = (count, min, max) => {
+//   const responseArray = [];
+//   for (let i = 0; i < count; i++) {
+//     responseArray.push(Math.random() * (max - min) + min);
+//   }
+//   return responseArray;
+// };
+
+// const minMaxObject = arrayNum => {
+//   return { min: Math.min(...arrayNum), max: Math.max(...arrayNum) };
+// };
+
+// let result = generateRandomArray(15, 5, 20);
+// console.log(result);
+// console.log(minMaxObject(result));
+
+// const average = (...numbers) => {
+//     let total = 0;
+//     for (let number of numbers) total += number;
+//     return total / numbers.length;
+//   };
+
+//   console.log(average(1, 53, 85, 69, 2, 100));
+
+// создать объект каталог у которого были бы следующие возможности
+//     добавить, удалить, создать, изменить, вернуть количество, фильтрация по типу.
+
+// const catalog = {
+//   list: [],
+
+//   add: () => {},
+//   remove: () => {},
+//   create: (name, type, quantity) => {},
+//   change: () => {},
+//   filterType: () => {},
+//   count: () => {},
+// };
+
+const catalog = {
+    list: [],
+  
+    add: function (product) {
+      this.list.push(product);
+    },
+    remove: function (id) {
+      for (let i = 0; i < this.list.length; i++)
+        if (product.id === id) this.list.splice(i, 1);
+    },
+    create: function (name, type, quantity) {
+      return { id: this.list.length + 1, name, type, quantity };
+    },
+    change: function (id, props) {
+      let index;
+      for (let i = 0; i < this.list.length; i++) {
+        if (this.list[i].id === id) {
+          index = i;
+          break;
+        }
+      }
+      for (let key in props) this.list[index][key] = props[key];
+    },
+  
+    filterType: function (type) {
+      let response = [];
+      for (let product of this.list)
+        if (product.type === type) response.push(product);
+      return response;
+    },
+  
