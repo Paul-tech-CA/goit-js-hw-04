@@ -15,27 +15,41 @@
 //     ),
 //   );
 
-const baseString = 'abcdefghijklmnopqrstuvwxyz0123456789';
+// const baseString = 'abcdefghijklmnopqrstuvwxyz0123456789';
 
-const generateRandomString = (length, callback) => {
-  let randomValue = '';
-  for (let i = 0; i < length; i++)
-    randomValue += baseString[parseInt(Math.random() * baseString.length)];
+// const generateRandomString = (length, callback) => {
+//   let randomValue = '';
+//   for (let i = 0; i < length; i++)
+//     randomValue += baseString[parseInt(Math.random() * baseString.length)];
 
-  if (callback !== undefined) return callback(randomValue);
-  return randomValue;
-};
+//   if (callback !== undefined) return callback(randomValue);
+//   return randomValue;
+// };
 
-const tempFn = str => {
-  const arrayNum = str
-    .split('')
-    .filter(item => !Number.isNaN(Number(item)))
-    .map(item => (item = parseInt(item)));
-  let total = 0;
-  arrayNum.forEach(element => {
-    total += element;
-  });
-  return total / arrayNum.length;
-};
+// const tempFn = str => {
+//   const arrayNum = str
+//     .split('')
+//     .filter(item => !Number.isNaN(Number(item)))
+//     .map(item => (item = parseInt(item)));
+//   let total = 0;
+//   arrayNum.forEach(element => {
+//     total += element;
+//   });
+//   return total / arrayNum.length;
+// };
 
-console.log(generateRandomString(250, tempFn));
+// console.log(generateRandomString(250, tempFn));
+
+// =======================================
+// const sum = (num) => {
+//     let value = num;
+//     const fnSum = (num2) => {
+//         value += num2;
+//         return { s: fnSum, value };
+//     }
+
+//     return { value, s: fnSum };
+
+// }
+
+// console.log(sum(1).s(2).s(3).s(15).value); // 6
